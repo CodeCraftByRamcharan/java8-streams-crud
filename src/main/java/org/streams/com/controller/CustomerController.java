@@ -60,7 +60,7 @@ public class CustomerController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @GetMapping("/{id}/orders")
-    public ResponseEntity<List<Order>> getOrdersByCustomerId(@PathVariable int id) {
+    public ResponseEntity<List<Order>> getOrdersByCustomerId(@PathVariable("id") int id) {
         List<Order> ordersList = customerService.getAllOrderForCustomerId(id);
         return ResponseEntity.ok(ordersList);
     }
@@ -94,7 +94,7 @@ public class CustomerController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @GetMapping("/spent/greaterThan/{amount}")
-    public ResponseEntity<List<Customer>> getCustomerSpendingGreaterThan(@PathVariable Integer amount) {
+    public ResponseEntity<List<Customer>> getCustomerSpendingGreaterThan(@PathVariable("amount") Integer amount) {
         return ResponseEntity.ok(customerService.fetchCustomerSpendingGreaterThan(amount));
     }
 
@@ -104,7 +104,7 @@ public class CustomerController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @GetMapping("/big-spenders/{threshold}")
-    public ResponseEntity<List<Customer>> findBigSpenders(@PathVariable double threshold) {
+    public ResponseEntity<List<Customer>> findBigSpenders(@PathVariable("threshold") double threshold) {
         return ResponseEntity.ok(customerService.findBigSpenders(threshold));
     }
 
@@ -116,7 +116,7 @@ public class CustomerController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @GetMapping("/{top}/expensive/products")
-    public ResponseEntity<List<Product>> getTopExpensiveProducts(@PathVariable int top) {
+    public ResponseEntity<List<Product>> getTopExpensiveProducts(@PathVariable("top") int top) {
         List<Product> topExpensiveProduct = customerService.getTopExpensiveProducts(top);
         return ResponseEntity.ok(topExpensiveProduct);
     }
@@ -147,7 +147,7 @@ public class CustomerController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @GetMapping("/{top}/frequently-purchase-product")
-    public ResponseEntity<List<Map.Entry<String, Long>>> getTopFrequentlyPurchasedProduct(@PathVariable Integer top) {
+    public ResponseEntity<List<Map.Entry<String, Long>>> getTopFrequentlyPurchasedProduct(@PathVariable("top") Integer top) {
         return ResponseEntity.ok(customerService.fetchFrequentlyPurchasedProduct(top));
     }
 
@@ -169,7 +169,7 @@ public class CustomerController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @GetMapping("/any-spent-over/{amount}")
-    public ResponseEntity<Boolean> anyCustomerSpentOver(@PathVariable double amount) {
+    public ResponseEntity<Boolean> anyCustomerSpentOver(@PathVariable("amount") double amount) {
         return ResponseEntity.ok(customerService.anyCustomerSpentOver(amount));
     }
 
