@@ -1,0 +1,15 @@
+meta {
+  name: getTopExpensiveProductsWithParallelStreams
+  type: http
+  seq: 18
+}
+
+get {
+  url: http://localhost:8080/api/customers/top-products
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

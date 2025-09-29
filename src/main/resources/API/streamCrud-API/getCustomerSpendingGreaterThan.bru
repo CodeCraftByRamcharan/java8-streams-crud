@@ -1,0 +1,15 @@
+meta {
+  name: getCustomerSpendingGreaterThan
+  type: http
+  seq: 6
+}
+
+get {
+  url: http://localhost:8080/api/customers/spent/greaterThan/1000
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

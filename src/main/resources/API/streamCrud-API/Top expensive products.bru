@@ -1,0 +1,15 @@
+meta {
+  name: Top expensive products
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:8080/api/customers/6/expensive/products
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

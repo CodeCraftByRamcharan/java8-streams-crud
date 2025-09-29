@@ -1,0 +1,15 @@
+meta {
+  name: Spending per customer
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://localhost:8080/api/customers/spending-per-customer
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

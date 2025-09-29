@@ -1,0 +1,15 @@
+meta {
+  name: totalRevenueParallel
+  type: http
+  seq: 16
+}
+
+get {
+  url: http://localhost:8080/api/customers/total-revenue-parallel
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

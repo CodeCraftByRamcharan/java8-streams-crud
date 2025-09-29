@@ -1,0 +1,15 @@
+meta {
+  name: noCustomerHasEmptyEmail
+  type: http
+  seq: 11
+}
+
+get {
+  url: http://localhost:8080/api/customers/no-empty-email
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,15 @@
+meta {
+  name: allCustomersHaveOrders
+  type: http
+  seq: 9
+}
+
+get {
+  url: http://localhost:8080/api/customers/all-have-orders
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
